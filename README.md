@@ -11,6 +11,66 @@
 7.	To reach a variable, enter the variable to be searched and symbol table has been checked for corresponding variable, the variable along with its address is displayed as result.
 8.	Stop the program. 
 # PROGRAM
+```
+#include <stdio.h>
+#include <conio.h> 
+#include <ctype.h> 
+#include <stdlib.h>
+#include <string.h> 
+#include <math.h>
+void main() {
+    int i = 0, j = 0, x = 0, n, flag = 0;
+    void *p, *add[5];
+    char ch, srch, b[15], d[15], c;
+
+    printf("Enter the Expression terminated by $:");
+    while ((c = getchar()) != '$') {
+        b[i] = c;
+        i++;
+    }
+    n = i - 1;
+    printf("Given Expression:");
+    for (i = 0; i <= n; i++) {
+        printf("%c", b[i]);
+    }
+    printf("\n Symbol Table\n");
+    printf("Symbol\taddr\t\ttype");
+    while (j <= n) {
+        c = b[j];
+        if (isalpha((unsigned char)c)) {
+            if (j == n) {
+                p = malloc(1);
+                add[x] = p;
+                d[x] = c;
+                printf("%c\t%p\tidentifier", c, p);
+            } else {
+                ch = b[j + 1];
+                if (ch == '+' || ch == '-' || ch == '*' || ch == '=') {
+                    p = malloc(1);
+                    add[x] = p;
+                    d[x] = c;
+                    printf("\n%c\t%p\tidentifier\n", c, p);
+                    x++;
+                }
+            }
+        }
+        j++;
+    }
+    printf("\n The symbol is to be searched: ");
+    srch = getch();
+    for (i = 0; i <= x; i++) {
+        if (srch == d[i]) {
+            printf("\n Symbol Found");
+            printf("\n%c%s%p\n", srch, "@address", add[i]);
+            flag = 1;
+        }
+    }
+    if (flag == 0)
+        printf("\nSymbol Not Found");
+}
+```
 # OUTPUT
+![328425656-6a2d0998-d068-4ba5-bafd-135fcf113371](https://github.com/Swetha733N/IMPLEMENTATION-OF-SYMBOL-TABLE-/assets/122199934/3a1fd965-ed4a-4208-b531-b82374df7192)
+
 # RESULT
 ### The program to implement a symbol table is executed and the output is verified.
