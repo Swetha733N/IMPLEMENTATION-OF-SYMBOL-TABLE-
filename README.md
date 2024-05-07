@@ -1,6 +1,8 @@
 # Ex-2 IMPLEMENTATION-OF-SYMBOL-TABLE
+
 # AIM :
 ## To write a C program to implement a symbol table.
+
 # ALGORITHM
 1.	Start the program.
 2.	Get the input from the user with the terminating symbol ‘$’.
@@ -9,7 +11,8 @@
 5.	While reading, the input symbol is inserted into symbol table along with its memory address.
 6.	The steps are repeated till ‘$’ is reached.
 7.	To reach a variable, enter the variable to be searched and symbol table has been checked for corresponding variable, the variable along with its address is displayed as result.
-8.	Stop the program. 
+8.	Stop the program.
+9.	
 # PROGRAM
 ```
 #include <stdio.h>
